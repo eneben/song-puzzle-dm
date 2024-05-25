@@ -28,9 +28,13 @@ body {
 }
 
 h1 {
-  padding: 30px;
-  font-size: 50px;
+  padding: 80px 10px 50px 10px;
+  font-size: 70px;
   color: var(--highlight-color);
+}
+
+.description {
+  padding-bottom: 20px;
 }
 
 /* TO DO: media queries */
