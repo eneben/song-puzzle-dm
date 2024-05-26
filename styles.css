@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+@import "./media-queries.css";
+
 :root {
   --background-color-dark: #0b0c10;
   --background-color: #1f2833;
@@ -55,12 +57,29 @@ label {
 }
 
 input {
-  width: 30px;
+  width: 40px;
 }
 
-/* Das geht noch nicht. */
-input:active {
-  border-color: var(--highlight-color);
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+input:focus {
+  border: 2px solid var(--highlight-color);
+  border-radius: 2px;
+  outline: none;
 }
 
 .highlight {
@@ -70,13 +89,8 @@ input:active {
 .submit {
   width: 90px;
   height: 40px;
-  color: var(--background-color-dark);
-  border: 4px solid var(--highlight-color);
-  border-radius: 10px;
+  color: var(--color-font);
+  background-color: transparent;
+  border: 3px solid var(--highlight-color);
+  border-radius: 5px;
 }
-
-.submit:active {
-  background-color: var(--highlight-color);
-}
-
-/* TO DO: media queries */

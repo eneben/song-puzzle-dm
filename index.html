@@ -4,63 +4,95 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Liederrätsel</title>
+    <script src="./index.js" defer></script>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" href="./play_circle.svg" />
   </head>
   <body>
-    <h1>MOIN!</h1>
-    <p class="description">Viel Spaß beim Musikhören.</p>
-    <form>
-      <section class="song">
-        <div class="section-heading">
-          <label for="hearts"
-            ><span class="highlight">Hearts</span> on fire – Hammerfall</label
-          >
-          <input id="hearts" name="hearts" type="number" required />
-        </div>
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/htKY2oD85rs?si=XDC7E2epgU7gBwlX"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </section>
-      <section class="song">
-        <div class="section-heading">
-          <label for="love"
-            ><span class="highlight">L.O.V.E.</span> (Smile Please) –
-            Skindred</label
-          >
-          <input id="love" name="love" type="number" required />
-        </div>
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/Xoy655otcnc?si=orffxo1WLxlwmSrU"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </section>
-      <section class="song">
-        <div class="section-heading">
-          <label for="gurke"
-            ><span class="highlight">Seegurke</span> – WIZO</label
-          >
-          <input id="gurke" name="gurke" type="number" required />
-        </div>
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/hBtKWIljLUY?si=I57P62MvlphwL9ha"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </section>
-      <button class="submit" type="submit">Fertig!</button>
-    </form>
+    <header>
+      <h1>MOIN!</h1>
+      <p class="description">Viel Spaß beim Musikhören.</p>
+    </header>
+    <main>
+      <form data-js="form">
+        <section class="song">
+          <div class="section-heading">
+            <label for="hearts"
+              ><span class="highlight">Hearts</span> on fire – Hammerfall</label
+            >
+            <input
+              data-js="input-1"
+              id="hearts"
+              name="hearts"
+              type="number"
+              required
+            />
+          </div>
+          <div class="video-container">
+            <iframe
+              class="video"
+              src="https://www.youtube-nocookie.com/embed/htKY2oD85rs?si=XDC7E2epgU7gBwlX"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </section>
+        <section class="song">
+          <div class="section-heading">
+            <label for="love"
+              ><span class="highlight">L.O.V.E.</span> (Smile Please) –
+              Skindred</label
+            >
+            <input
+              data-js="input-2"
+              id="love"
+              name="love"
+              type="number"
+              required
+            />
+          </div>
+          <div class="video-container">
+            <iframe
+              class="video"
+              src="https://www.youtube-nocookie.com/embed/Xoy655otcnc?si=orffxo1WLxlwmSrU"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </section>
+        <section class="song">
+          <div class="section-heading">
+            <label for="gurke"
+              ><span class="highlight">Seegurke</span> – WIZO</label
+            >
+            <input
+              data-js="input-3"
+              id="gurke"
+              name="gurke"
+              type="number"
+              required
+            />
+          </div>
+          <div class="video-container">
+            <iframe
+              class="video"
+              src="https://www.youtube-nocookie.com/embed/hBtKWIljLUY?si=I57P62MvlphwL9ha"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </section>
+        <button class="submit" type="submit">FERTIG</button>
+      </form>
+    </main>
   </body>
 </html>
