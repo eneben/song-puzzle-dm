@@ -87,7 +87,9 @@ function newCard(heading, description, image, error) {
 
 function removeCard() {
   const existingCard = document.querySelector(".card");
-  existingCard.remove();
+  if (existingCard) {
+    existingCard.remove();
+  }
 }
 
 // function errorCard()
