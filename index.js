@@ -5,23 +5,33 @@ const inputOne = document.querySelector('[data-js="input-1"]');
 const inputTwo = document.querySelector('[data-js="input-2"]');
 const inputThree = document.querySelector('[data-js="input-3"]');
 
-const solutionOne = 1;
-const solutionTwo = 2;
-const solutionThree = 3;
+const solutionOne = "1";
+const solutionTwo = "2";
+const solutionThree = "3";
+
+
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+
+  const inputOneCorrect = (inputOne.value === solutionOne);
+  const inputTwoCorrect = (inputTwo.value === solutionTwo);
+  const inputThreeCorrect = (inputThree.value === solutionThree);
+
   console.log("form: ", form);
   console.log("inputOne: ", inputOne);
   console.log("inputOne.value: ", inputOne.value);
-  if (inputOne.value !== solutionOne && inputTwo.value !== solutionTwo && inputThree.value !== solutionThree) {
-
+  if (!inputOneCorrect && !inputTwoCorrect && !inputThreeCorrect) {
     alert("Das war leider noch der falsche Ansatz: Alle drei Antworten sind falsch. Überlegt noch mal, das könnt Ihr besser!");
-  } else if ((inputOne.value !== 1 && inputTwo.value !== solutionTwo) || (inputTwo.value !== solutionTwo && inputThree.value !== solutionThree) || (inputOne.value !== solutionOne && inputThree.value !== solutionThree)) {
+  } else if (inputOneCorrect && !inputTwoCorrect && !inputThreeCorrect ||
+            !inputOneCorrect && inputTwoCorrect && !inputThreeCorrect ||
+            !inputOneCorrect && !inputTwoCorrect && inputThreeCorrect) {
     alert("Eine richtige Eingabe habt Ihr! Bei den anderen beiden müsst Ihr wohl noch mal nachzählen...");
-  } else if (inputOne.value !== solutionOne || inputTwo.value !== solutionTwo || inputThree.value !== solutionThree) {
+  } else if (inputOneCorrect && inputTwoCorrect && !inputThreeCorrect ||
+            inputOneCorrect && !inputTwoCorrect && inputThreeCorrect ||
+            !inputOneCorrect && inputTwoCorrect && inputThreeCorrect) {
     alert("Fast richtig. Einmal noch nachzählen bitte..."); 
-  } else if (inputOne.value === solutionOne && inputTwo.value === solutionTwo && inputThree.value === solutionThree) {
+  } else if (inputOneCorrect && inputTwoCorrect && inputThreeCorrect) {
     alert("Yay, Ihr habt es gelöst!");
   };
 });
