@@ -30,6 +30,12 @@ body {
   padding: 30px 10px;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 h1 {
   padding: 100px 10px 80px 10px;
   font-size: 70px;
