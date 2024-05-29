@@ -11,6 +11,7 @@ const solutionThree = "3";
 
 window.onload = () => {
   scrollToTop();
+  removeCard();
 };
 
 function scrollToTop() {
@@ -19,7 +20,6 @@ function scrollToTop() {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  removeCard();
 
   const inputOneCorrect = inputOne.value === solutionOne;
   const inputTwoCorrect = inputTwo.value === solutionTwo;
@@ -71,6 +71,8 @@ form.addEventListener("submit", (event) => {
 });
 
 function newCard(heading, description, image, error) {
+  removeCard();
+
   const newCard = document.createElement("article");
   newCard.classList.add("card");
   if (error) {
