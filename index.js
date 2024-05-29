@@ -9,6 +9,10 @@ const solutionOne = "1";
 const solutionTwo = "2";
 const solutionThree = "3";
 
+window.addEventListener("load", () => {
+  scrollToTop();
+});
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
