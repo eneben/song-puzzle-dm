@@ -5,6 +5,7 @@ const inputOne = document.querySelector('[data-js="input-1"]');
 const inputTwo = document.querySelector('[data-js="input-2"]');
 const inputThree = document.querySelector('[data-js="input-3"]');
 const main = document.querySelector('[data-js="main"]');
+
 const solutionOne = "1";
 const solutionTwo = "2";
 const solutionThree = "3";
@@ -29,9 +30,6 @@ form.addEventListener("submit", (event) => {
   let description = "";
   let image = "";
 
-  console.log("form: ", form);
-  console.log("inputOne: ", inputOne);
-  console.log("inputOne.value: ", inputOne.value);
   if (!inputOneCorrect && !inputTwoCorrect && !inputThreeCorrect) {
     heading = "Das war leider noch der falsche Ansatz:";
     description =
@@ -77,6 +75,8 @@ function newCard(heading, description, image, error) {
   newCard.classList.add("card");
   if (error) {
     newCard.classList.add("error");
+    // } else {
+    //   createConfetti();
   }
   newCard.innerHTML = `
     <h2 class="card-heading">${heading}</h2>
@@ -94,13 +94,14 @@ function removeCard() {
   }
 }
 
-// function errorCard()
-//soll das design der karte anpassen, solange noch eine falsche antwort gegeben wird zB rot.
+// function createConfetti() {}
 
-// function solutionCard()
-//soll das design der karte anpassen, wenn alles richtig angegeben wird, und weiteres rätsel oder lösung freigeben.
-
-// TO DO
+// TO DO'S:
 // Rote Umrandung von falschen Zahleneingaben - Designänderung von input elementen, error design
 // Cursor soll in erste falsche reinspringen (focus)
-// mit Tab taste ins nächste Input Feld
+// konfetti bei richtiger antwort
+// Bei richtiger Antwort: neues Rätsel oder Code oderwieoderwas?
+
+// PROBLEMS:
+// hochscrollen funktioniert nicht, oder?
+// diverse error-meldungen in der konsole, hilfe?!

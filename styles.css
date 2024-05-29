@@ -132,3 +132,8 @@ input:focus {
   background-color: var(--color-error);
   color: var(--color-font);
 }
+/* 
+.confetti {
+  z-index: 99;
+
+} */
