@@ -61,6 +61,7 @@ function newCard(heading, description, image, error) {
     <p>${description}</p>
     <img src=${image} />
   `;
+  main.append(newCard);
 }
 
 // function errorCard()

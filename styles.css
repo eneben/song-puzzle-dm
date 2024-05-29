@@ -99,6 +99,7 @@ input:focus {
 }
 
 .card {
+  margin: 100px 0;
   width: 800px;
   height: 400px;
   background-color: var(--highlight-color-dark);
