@@ -29,10 +29,7 @@ form.addEventListener("submit", (event) => {
       "Alle drei Antworten sind falsch. Überlegt noch mal, das könnt Ihr besser!";
     image =
       "https://www.zooplus.de/magazin/wp-content/uploads/2022/10/traurige-katze-kaefig-768x513.jpg";
-    newCard();
-    alert(
-      "Das war leider noch der falsche Ansatz: Alle drei Antworten sind falsch. Überlegt noch mal, das könnt Ihr besser!"
-    );
+    newCard(heading, description, image, error);
   } else if (
     (inputOneCorrect && !inputTwoCorrect && !inputThreeCorrect) ||
     (!inputOneCorrect && inputTwoCorrect && !inputThreeCorrect) ||
@@ -53,7 +50,7 @@ form.addEventListener("submit", (event) => {
   }
 });
 
-function newCard(heading, description, image) {
+function newCard(heading, description, image, error) {
   const newCard = document.createElement("article");
   newCard.classList.add("card");
   if (error) {
