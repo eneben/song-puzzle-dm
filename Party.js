@@ -238,5 +238,5 @@ export function Confetti() {
     }
   }
 
-  poof();
+  Poof();
 }

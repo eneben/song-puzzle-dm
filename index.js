@@ -1,4 +1,6 @@
-import { Confetti } from "./Party.js";
+// import { Confetti } from "./Party.js";
+
+import "https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js";
 
 console.clear();
 
@@ -119,8 +121,19 @@ function newCard(heading, description, image, error) {
     button.classList.add("confetti");
     button.setAttribute("type", "button");
     button.innerText = "Konfetti 🎉";
-    button.addEventListener("click", () => {
-      Confetti();
+    button.addEventListener("click", (event) => {
+      const target = event.target.getBoundingClientRect();
+      const halfWidth = target.width / 2;
+      const halfHeight = target.height / 2;
+      confetti({
+        particleCount: 150,
+        spread: 60,
+        colors: ["#FF69B4", "#66fcf1", "#45a29e", "#151b54", "#FFD700"],
+        origin: {
+          x: (target.x + halfWidth) / window.innerWidth,
+          y: (target.y + halfHeight) / window.innerHeight,
+        },
+      });
     });
     newCard.append(button);
   }
@@ -136,10 +149,7 @@ function removeCard() {
   }
 }
 
-// function createConfetti() {}
-
 // TO DO'S:
-// konfetti bei richtiger antwort
 // Bei richtiger Antwort: neues Rätsel oder Code oderwieoderwas?
 
 // PROBLEMS:
