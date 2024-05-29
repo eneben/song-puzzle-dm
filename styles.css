@@ -8,6 +8,7 @@
   --color-font: #c5c6c7;
   --highlight-color: #66fcf1;
   --highlight-color-dark: #45a29e;
+  --color-error: #d34040;
 }
 
 * {
@@ -95,4 +96,16 @@ input:focus {
   background-color: transparent;
   border: 3px solid var(--highlight-color);
   border-radius: 5px;
+}
+
+.card {
+  width: 800px;
+  height: 400px;
+  background-color: var(--highlight-color-dark);
+  color: var(--background-color-dark);
+}
+
+.error {
+  background-color: var(--color-error);
+  color: var(--color-font);
 }

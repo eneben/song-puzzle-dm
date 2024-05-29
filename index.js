@@ -4,47 +4,73 @@ const form = document.querySelector('[data-js="form"]');
 const inputOne = document.querySelector('[data-js="input-1"]');
 const inputTwo = document.querySelector('[data-js="input-2"]');
 const inputThree = document.querySelector('[data-js="input-3"]');
-
+const main = document.querySelector('[data-js="main"]');
 const solutionOne = "1";
 const solutionTwo = "2";
 const solutionThree = "3";
 
-
-
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const inputOneCorrect = (inputOne.value === solutionOne);
-  const inputTwoCorrect = (inputTwo.value === solutionTwo);
-  const inputThreeCorrect = (inputThree.value === solutionThree);
+  const inputOneCorrect = inputOne.value === solutionOne;
+  const inputTwoCorrect = inputTwo.value === solutionTwo;
+  const inputThreeCorrect = inputThree.value === solutionThree;
+  let error = true;
+  let heading = "";
+  let description = "";
+  let image = "";
 
   console.log("form: ", form);
   console.log("inputOne: ", inputOne);
   console.log("inputOne.value: ", inputOne.value);
   if (!inputOneCorrect && !inputTwoCorrect && !inputThreeCorrect) {
-    alert("Das war leider noch der falsche Ansatz: Alle drei Antworten sind falsch. Überlegt noch mal, das könnt Ihr besser!");
-  } else if (inputOneCorrect && !inputTwoCorrect && !inputThreeCorrect ||
-            !inputOneCorrect && inputTwoCorrect && !inputThreeCorrect ||
-            !inputOneCorrect && !inputTwoCorrect && inputThreeCorrect) {
-    alert("Eine richtige Eingabe habt Ihr! Bei den anderen beiden müsst Ihr wohl noch mal nachzählen...");
-  } else if (inputOneCorrect && inputTwoCorrect && !inputThreeCorrect ||
-            inputOneCorrect && !inputTwoCorrect && inputThreeCorrect ||
-            !inputOneCorrect && inputTwoCorrect && inputThreeCorrect) {
-    alert("Fast richtig. Einmal noch nachzählen bitte..."); 
+    heading = "Das war leider noch der falsche Ansatz:";
+    description =
+      "Alle drei Antworten sind falsch. Überlegt noch mal, das könnt Ihr besser!";
+    image =
+      "https://www.zooplus.de/magazin/wp-content/uploads/2022/10/traurige-katze-kaefig-768x513.jpg";
+    newCard();
+    alert(
+      "Das war leider noch der falsche Ansatz: Alle drei Antworten sind falsch. Überlegt noch mal, das könnt Ihr besser!"
+    );
+  } else if (
+    (inputOneCorrect && !inputTwoCorrect && !inputThreeCorrect) ||
+    (!inputOneCorrect && inputTwoCorrect && !inputThreeCorrect) ||
+    (!inputOneCorrect && !inputTwoCorrect && inputThreeCorrect)
+  ) {
+    alert(
+      "Eine richtige Eingabe habt Ihr! Bei den anderen beiden müsst Ihr wohl noch mal nachzählen..."
+    );
+  } else if (
+    (inputOneCorrect && inputTwoCorrect && !inputThreeCorrect) ||
+    (inputOneCorrect && !inputTwoCorrect && inputThreeCorrect) ||
+    (!inputOneCorrect && inputTwoCorrect && inputThreeCorrect)
+  ) {
+    alert("Fast richtig. Einmal noch nachzählen bitte...");
   } else if (inputOneCorrect && inputTwoCorrect && inputThreeCorrect) {
+    error = false;
     alert("Yay, Ihr habt es gelöst!");
-  };
+  }
 });
 
-function newCard()
-//soll eine neue Karte unter den Videos auftauchen lassen mit Klassen und CSS und so, bisher ohne Inhalt. die website soll automatisch unter den button runterscrollen, so dass man die karte sieht.
+function newCard(heading, description, image) {
+  const newCard = document.createElement("article");
+  newCard.classList.add("card");
+  if (error) {
+    newCard.classList.add("error");
+  }
+  newCard.innerHTML = `
+    <h2>${heading}</h2>
+    <p>${description}</p>
+    <img src=${image} />
+  `;
+}
 
-function errorCard()
-//soll das design der karte anpassen, solange noch eine falsche antwort gegeben wird zB rot. 
+// function errorCard()
+//soll das design der karte anpassen, solange noch eine falsche antwort gegeben wird zB rot.
 
-function solutionCard()
+// function solutionCard()
 //soll das design der karte anpassen, wenn alles richtig angegeben wird, und weiteres rätsel oder lösung freigeben.
-
 
 // TO DO
 // Rote Umrandung von falschen Zahleneingaben - Designänderung von input elementen, error design
