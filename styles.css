@@ -158,4 +158,6 @@ input:focus {
   border-radius: 5px;
   font-size: 15px;
   color: var(--background-color-dark);
+  outline: none;
+  border: none;
 }

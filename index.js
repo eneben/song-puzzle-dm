@@ -149,7 +149,8 @@ function removeCard() {
 
 // TO DO'S:
 // Bei richtiger Antwort: neues Rätsel oder Code oderwieoderwas?
+// sowohl neue karte nicht horizontal zentriert
+// als auch text-bild-button nicht richtig zentriert
 
 // PROBLEMS:
-// hochscrollen funktioniert nicht, oder?
-// diverse error-meldungen in der konsole, hilfe?!
+// hochscrollen funktioniert nicht, warum?!?
