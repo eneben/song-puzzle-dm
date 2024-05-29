@@ -19,6 +19,7 @@ function scrollToTop() {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+  removeCard();
 
   const inputOneCorrect = inputOne.value === solutionOne;
   const inputTwoCorrect = inputTwo.value === solutionTwo;
@@ -81,7 +82,12 @@ function newCard(heading, description, image, error) {
     <img class="card-image" src=${image} />
   `;
   main.append(newCard);
-  newCard.scrollIntoView({ behavior: "smooth", block: "start" });
+  newCard.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+function removeCard() {
+  const existingCard = document.querySelector(".card");
+  existingCard.remove();
 }
 
 // function errorCard()
@@ -93,3 +99,4 @@ function newCard(heading, description, image, error) {
 // TO DO
 // Rote Umrandung von falschen Zahleneingaben - Designänderung von input elementen, error design
 // Cursor soll in erste falsche reinspringen (focus)
+// mit Tab taste ins nächste Input Feld

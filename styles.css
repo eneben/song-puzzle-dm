@@ -99,7 +99,7 @@ input:focus {
 }
 
 .card {
-  margin: 120px 30px;
+  margin: 120px 0;
   padding: 100px 30px;
   width: 100%;
   max-width: 800px;
