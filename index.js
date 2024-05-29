@@ -9,9 +9,13 @@ const solutionOne = "1";
 const solutionTwo = "2";
 const solutionThree = "3";
 
-window.addEventListener("load", () => {
+window.onload = () => {
   scrollToTop();
-});
+};
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
