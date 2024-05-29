@@ -100,10 +100,24 @@ input:focus {
 
 .card {
   margin: 100px 0;
-  width: 800px;
-  height: 400px;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
   background-color: var(--highlight-color-dark);
   color: var(--background-color-dark);
+}
+
+.card-heading {
+  padding: 100px;
+}
+
+.card-description {
+  padding: 50px;
+}
+
+.card-image {
+  width: 80%;
+  height: auto;
 }
 
 .error {

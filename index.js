@@ -57,11 +57,12 @@ function newCard(heading, description, image, error) {
     newCard.classList.add("error");
   }
   newCard.innerHTML = `
-    <h2>${heading}</h2>
-    <p>${description}</p>
-    <img src=${image} />
+    <h2 class="card-heading">${heading}</h2>
+    <p class="card-description">${description}</p>
+    <img class="card-image" src=${image} />
   `;
   main.append(newCard);
+  newCard.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 // function errorCard()
