@@ -39,18 +39,29 @@ form.addEventListener("submit", (event) => {
     (!inputOneCorrect && inputTwoCorrect && !inputThreeCorrect) ||
     (!inputOneCorrect && !inputTwoCorrect && inputThreeCorrect)
   ) {
-    alert(
-      "Eine richtige Eingabe habt Ihr! Bei den anderen beiden müsst Ihr wohl noch mal nachzählen..."
-    );
+    heading = "Eine richtige Eingabe habt Ihr!";
+    description =
+      "Bei den anderen beiden müsst Ihr wohl noch mal nachzählen...";
+    image =
+      "https://img.freepik.com/premium-photo/many-cats-different-breeds-looking-camera_941600-10549.jpg";
+    newCard(heading, description, image, error);
   } else if (
     (inputOneCorrect && inputTwoCorrect && !inputThreeCorrect) ||
     (inputOneCorrect && !inputTwoCorrect && inputThreeCorrect) ||
     (!inputOneCorrect && inputTwoCorrect && inputThreeCorrect)
   ) {
-    alert("Fast richtig. Einmal noch nachzählen bitte...");
+    heading = "Fast richtig.";
+    description = "Einmal noch nachzählen bitte...";
+    image =
+      "https://i.natgeofe.com/n/4cebbf38-5df4-4ed0-864a-4ebeb64d33a4/NationalGeographic_1468962.jpg";
+    newCard(heading, description, image, error);
   } else if (inputOneCorrect && inputTwoCorrect && inputThreeCorrect) {
     error = false;
-    alert("Yay, Ihr habt es gelöst!");
+    heading = "Yay, Ihr habt es gelöst!";
+    description = "Schnell freuen und Trinkpause, dann geht es schon weiter.";
+    image =
+      "https://static.wikia.nocookie.net/cutekittycats/images/a/ad/Caty.jpeg";
+    newCard(heading, description, image, error);
   }
 });
 

@@ -119,7 +119,7 @@ input:focus {
 .card-image {
   width: 80%;
   height: auto;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 }
 
 .error {
