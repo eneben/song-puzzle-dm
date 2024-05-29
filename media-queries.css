@@ -2,11 +2,17 @@
   .submit:active {
     background-color: var(--highlight-color);
   }
+  .confetti:active {
+    transform: scale(1.2);
+  }
 }
 
 @media (pointer: fine) {
   .submit:hover {
     background-color: var(--highlight-color);
+  }
+  .confetti:hover {
+    transform: scale(1.2);
   }
 }
 

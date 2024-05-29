@@ -1,3 +1,5 @@
+import { Confetti } from "./Party.js";
+
 console.clear();
 
 const form = document.querySelector('[data-js="form"]');
@@ -25,6 +27,37 @@ form.addEventListener("submit", (event) => {
   const inputOneCorrect = inputOne.value === solutionOne;
   const inputTwoCorrect = inputTwo.value === solutionTwo;
   const inputThreeCorrect = inputThree.value === solutionThree;
+
+  if (!inputOneCorrect) {
+    inputOne.focus();
+  } else if (!inputTwoCorrect) {
+    inputTwo.focus();
+  } else if (!inputThreeCorrect) {
+    inputThree.focus();
+  }
+
+  inputOne.classList.remove("input-error");
+  inputTwo.classList.remove("input-error");
+  inputThree.classList.remove("input-error");
+
+  if (!inputOneCorrect) {
+    inputOne.classList.add("input-error");
+  } else {
+    inputOne.classList.add("input-correct");
+  }
+
+  if (!inputTwoCorrect) {
+    inputTwo.classList.add("input-error");
+  } else {
+    inputTwo.classList.add("input-correct");
+  }
+
+  if (!inputThreeCorrect) {
+    inputThree.classList.add("input-error");
+  } else {
+    inputThree.classList.add("input-correct");
+  }
+
   let error = true;
   let heading = "";
   let description = "";
@@ -73,16 +106,25 @@ function newCard(heading, description, image, error) {
 
   const newCard = document.createElement("article");
   newCard.classList.add("card");
-  if (error) {
-    newCard.classList.add("error");
-    // } else {
-    //   createConfetti();
-  }
   newCard.innerHTML = `
     <h2 class="card-heading">${heading}</h2>
     <p class="card-description">${description}</p>
     <img class="card-image" src=${image} />
   `;
+
+  if (error) {
+    newCard.classList.add("card-error");
+  } else {
+    const button = document.createElement("button");
+    button.classList.add("confetti");
+    button.setAttribute("type", "button");
+    button.innerText = "Konfetti 🎉";
+    button.addEventListener("click", () => {
+      Confetti();
+    });
+    newCard.append(button);
+  }
+
   main.append(newCard);
   newCard.scrollIntoView({ behavior: "smooth", block: "center" });
 }
@@ -97,8 +139,6 @@ function removeCard() {
 // function createConfetti() {}
 
 // TO DO'S:
-// Rote Umrandung von falschen Zahleneingaben - Designänderung von input elementen, error design
-// Cursor soll in erste falsche reinspringen (focus)
 // konfetti bei richtiger antwort
 // Bei richtiger Antwort: neues Rätsel oder Code oderwieoderwas?
 

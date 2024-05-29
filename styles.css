@@ -8,7 +8,9 @@
   --color-font: #c5c6c7;
   --highlight-color: #66fcf1;
   --highlight-color-dark: #45a29e;
+  --highlight-color-dark-transparent: #45a29e44;
   --color-error: #d34040;
+  --color-error-transparent: #d3404044;
 }
 
 * {
@@ -65,8 +67,31 @@ label {
 }
 
 input {
-  width: 40px;
+  width: 50px;
   max-height: 40px;
+  padding: 5px;
+}
+
+.input-error {
+  border: 3px solid var(--color-error);
+  background-color: var(--color-error-transparent);
+  color: var(--color-font);
+}
+
+.input-correct {
+  border: 3px solid var(--highlight-color-dark);
+  background-color: var(--highlight-color-dark-transparent);
+  color: var(--color-font);
+}
+
+input:focus {
+  border: 3px solid var(--highlight-color);
+  border-radius: 2px;
+  outline: none;
+}
+
+.input-error:focus {
+  border: 3px solid var(--color-error);
 }
 
 .video-container {
@@ -83,12 +108,6 @@ input {
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-input:focus {
-  border: 2px solid var(--highlight-color);
-  border-radius: 2px;
-  outline: none;
 }
 
 .highlight {
@@ -128,12 +147,16 @@ input:focus {
   padding-bottom: 50px;
 }
 
-.error {
+.card-error {
   background-color: var(--color-error);
   color: var(--color-font);
 }
-/* 
-.confetti {
-  z-index: 99;
 
-} */
+.confetti {
+  background-color: hotpink;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: var(--background-color-dark);
+  transition: all ease-in-out 250ms;
+}
