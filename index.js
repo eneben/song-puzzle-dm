@@ -117,7 +117,7 @@ function newCard(heading, description, image, error) {
   } else {
     const button = document.createElement("button");
     button.classList.add("confetti");
-    button.setAttribute("type", "button");
+    button.type = button;
     button.innerText = "Konfetti 🎉";
     button.addEventListener("click", (event) => {
       const target = event.target.getBoundingClientRect();

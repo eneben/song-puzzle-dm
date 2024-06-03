@@ -20,7 +20,7 @@
   font-family: "Montserrat";
 }
 
-body {
+html {
   background: var(--background-color-dark);
   background: radial-gradient(
     circle at top right,
