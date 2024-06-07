@@ -163,8 +163,17 @@ input:focus {
 }
 
 .code-puzzle-container {
-  width: 50%;
-  background-color: var(--color-font);
-  border: 5px solid var(--background-color);
+  width: 80%;
+  height: fit-content;
+  background-color: var(--background-color);
+  color: var(--color-font);
+  border: 5px solid var(--highlight-color);
   border-radius: 10px;
+  text-align: center;
+  padding: 100px;
+  margin: 100px auto;
+}
+
+.emoticons {
+  font-size: 20px;
 }

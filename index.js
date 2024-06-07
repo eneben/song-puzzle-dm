@@ -129,7 +129,7 @@ function newCard(heading, description, image, hint, error) {
   } else {
     const button = document.createElement("button");
     button.classList.add("confetti");
-    button.type = button;
+    button.type = "button";
     button.innerText = "Konfetti 🎉";
     button.addEventListener("click", (event) => {
       const target = event.target.getBoundingClientRect();
@@ -144,19 +144,28 @@ function newCard(heading, description, image, hint, error) {
           y: (target.y + halfHeight) / window.innerHeight,
         },
       });
+      showCodePuzzle(newCard);
     });
     newCard.append(button);
-
-    const codePuzzle = document.createElement("div");
-    codePuzzle.classList.add("code-puzzle-container");
-    codePuzzle.innerHTML = `
-    ❤️‍🔥🧠🤟💍🔓🍾😍
-    `;
-    newCard.append(codePuzzle);
   }
 
   main.append(newCard);
   newCard.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+function showCodePuzzle(newCard) {
+  const codePuzzle = document.createElement("div");
+  codePuzzle.classList.add("code-puzzle-container");
+  codePuzzle.innerHTML = `
+    <p class="emoticons">❤️‍🔥 + ❤️‍🔥 + ❤️‍🔥 - 🤟 = 🍾</p>
+    <br/>
+    <p class="emoticons">🍾 - 🧠 + 🤟 + 🤟 = 💍</p>
+    <br/>
+    <p class="emoticons">❤️‍🔥 + 🍾 + 💍 + 💍 = 😍</p>
+    <br/>
+    <p class="emoticons">🤟 + 😍 + ❤️‍🔥 + 🧠 = 🔓</p>
+  `;
+  newCard.append(codePuzzle);
 }
 
 function removeCard() {
