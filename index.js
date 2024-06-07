@@ -12,6 +12,8 @@ const solutionOne = "37";
 const solutionTwo = "29";
 const solutionThree = "13";
 
+let isCodePuzzleVisible = false;
+
 window.onload = () => {
   scrollToTop();
   removeCard();
@@ -144,7 +146,9 @@ function newCard(heading, description, image, hint, error) {
           y: (target.y + halfHeight) / window.innerHeight,
         },
       });
-      showCodePuzzle(newCard);
+      if (!isCodePuzzleVisible) {
+        showCodePuzzle(newCard);
+      }
     });
     newCard.append(button);
   }
@@ -166,6 +170,7 @@ function showCodePuzzle(newCard) {
     <p class="emoticons">🤟 + 😍 + ❤️‍🔥 + 🧠 = 🔓</p>
   `;
   newCard.append(codePuzzle);
+  isCodePuzzleVisible = true;
 }
 
 function removeCard() {
@@ -174,12 +179,3 @@ function removeCard() {
     existingCard.remove();
   }
 }
-
-// TO DO'S u. PROBLEMS:
-
-// - media queries für code-emoticon-rätsel hinzufügen:
-// - warum ändert sich nicht die größe der emoticons? lässt sich mit font-size ändern,
-// das habe ich kontrolliert. aber media-queries funktionieren nicht. warum?
-// - weißer streifen beim hoch- und runterscrollen ganz oben bzw. ganz unten (so
-// wie wenn man mit der maus neu laden will, indem man ganz oben runterzieht)
-// - automatisches hochscrollen funktioniert nicht, warum?!?
