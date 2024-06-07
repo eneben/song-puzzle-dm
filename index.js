@@ -8,9 +8,9 @@ const inputTwo = document.querySelector('[data-js="input-2"]');
 const inputThree = document.querySelector('[data-js="input-3"]');
 const main = document.querySelector('[data-js="main"]');
 
-const solutionOne = "1";
-const solutionTwo = "2";
-const solutionThree = "3";
+const solutionOne = "37";
+const solutionTwo = "29";
+const solutionThree = "13";
 
 window.onload = () => {
   scrollToTop();
@@ -70,7 +70,7 @@ form.addEventListener("submit", (event) => {
       "Alle drei Antworten sind falsch. Überlegt noch mal, das könnt Ihr besser!";
     image =
       "https://www.zooplus.de/magazin/wp-content/uploads/2022/10/traurige-katze-kaefig-768x513.jpg";
-    newCard(heading, description, image, error);
+    newCard(heading, description, image, hint, error);
   } else if (
     (inputOneCorrect && !inputTwoCorrect && !inputThreeCorrect) ||
     (!inputOneCorrect && inputTwoCorrect && !inputThreeCorrect) ||
@@ -81,7 +81,7 @@ form.addEventListener("submit", (event) => {
       "Bei den anderen beiden müsst Ihr wohl noch mal nachzählen...";
     image =
       "https://img.freepik.com/premium-photo/many-cats-different-breeds-looking-camera_941600-10549.jpg";
-    newCard(heading, description, image, error);
+    newCard(heading, description, image, hint, error);
   } else if (
     (inputOneCorrect && inputTwoCorrect && !inputThreeCorrect) ||
     (inputOneCorrect && !inputTwoCorrect && inputThreeCorrect) ||
@@ -93,12 +93,12 @@ form.addEventListener("submit", (event) => {
       "https://i.natgeofe.com/n/4cebbf38-5df4-4ed0-864a-4ebeb64d33a4/NationalGeographic_1468962.jpg";
     if (!inputOneCorrect) {
       hint =
-        "👆 Tipp: Zählt nicht den Background. Es gilt nur der komplette Titel.";
+        "Tipp: Zählt nicht den Background. Es gilt nur der komplette Titel. 👆";
     } else if (!inputTwoCorrect) {
       hint =
-        '👆 Tipp: Es zählt nur das komplette Wort "Love". Nicht das buchstabierte "L.O.V.E." und nicht "lovely" oder so.';
+        'Tipp: Es zählt nur das komplette Wort "Love". Nicht das buchstabierte "L.O.V.E." und nicht "lovely" oder so. 👆';
     } else if (!inputThreeCorrect) {
-      hint = "👆 Tipp: Hier bitte den Background nicht vergessen.";
+      hint = "Tipp: Hier bitte den Background nicht vergessen. 👆";
     }
     newCard(heading, description, image, hint, error);
   } else if (inputOneCorrect && inputTwoCorrect && inputThreeCorrect) {
@@ -107,11 +107,11 @@ form.addEventListener("submit", (event) => {
     description = "Schnell freuen und Trinkpause, dann geht es schon weiter.";
     image =
       "https://static.wikia.nocookie.net/cutekittycats/images/a/ad/Caty.jpeg";
-    newCard(heading, description, image, error);
+    newCard(heading, description, image, hint, error);
   }
 });
 
-function newCard(heading, description, image, error) {
+function newCard(heading, description, image, hint, error) {
   removeCard();
 
   const newCard = document.createElement("article");
