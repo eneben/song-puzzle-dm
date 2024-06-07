@@ -146,6 +146,13 @@ function newCard(heading, description, image, hint, error) {
       });
     });
     newCard.append(button);
+
+    const codePuzzle = document.createElement("div");
+    codePuzzle.classList.add("code-puzzle-container");
+    codePuzzle.innerHTML = `
+    ❤️‍🔥🧠🤟💍🔓🍾😍
+    `;
+    newCard.append(codePuzzle);
   }
 
   main.append(newCard);

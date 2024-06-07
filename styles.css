@@ -161,3 +161,10 @@ input:focus {
   outline: none;
   border: none;
 }
+
+.code-puzzle-container {
+  width: 50%;
+  background-color: var(--color-font);
+  border: 5px solid var(--background-color);
+  border-radius: 10px;
+}
