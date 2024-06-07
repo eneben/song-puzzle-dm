@@ -62,6 +62,7 @@ form.addEventListener("submit", (event) => {
   let heading = "";
   let description = "";
   let image = "";
+  let hint = "";
 
   if (!inputOneCorrect && !inputTwoCorrect && !inputThreeCorrect) {
     heading = "Das war leider noch der falsche Ansatz:";
@@ -88,6 +89,16 @@ form.addEventListener("submit", (event) => {
   ) {
     heading = "Fast richtig.";
     description = "Einmal noch nachzählen bitte...";
+    if (!inputOneCorrect) {
+      hint =
+        "👆 Tipp: Zählt nicht den Background. Es gilt nur der komplette Titel.";
+    } else if (!inputTwoCorrect) {
+      hint =
+        '👆 Tipp: Es zählt nur das komplette Wort "Love". Nicht das buchstabierte "L.O.V.E." und nicht "lovely" oder so.';
+    } else if (!inputThreeCorrect) {
+      hint = "👆 Tipp: Hier bitte den Background nicht vergessen.";
+    }
+
     image =
       "https://i.natgeofe.com/n/4cebbf38-5df4-4ed0-864a-4ebeb64d33a4/NationalGeographic_1468962.jpg";
     newCard(heading, description, image, error);
@@ -109,6 +120,7 @@ function newCard(heading, description, image, error) {
   newCard.innerHTML = `
     <h2 class="card-heading">${heading}</h2>
     <p class="card-description">${description}</p>
+    <p class="card-hint">${hint}</p>
     <img class="card-image" src=${image} />
   `;
 
