@@ -20,7 +20,7 @@
   font-family: "Montserrat";
 }
 
-html {
+body {
   background: var(--background-color-dark);
   background: radial-gradient(
     circle at top right,
@@ -124,7 +124,7 @@ input:focus {
 }
 
 .card {
-  margin: 120px 0;
+  margin: 120px auto;
   padding: 100px 30px;
   width: 100%;
   max-width: 800px;
@@ -170,10 +170,10 @@ input:focus {
   border: 5px solid var(--highlight-color);
   border-radius: 10px;
   text-align: center;
-  padding: 100px;
+  padding: 30px;
   margin: 100px auto;
 }
 
 .emoticons {
-  font-size: 20px;
+  font-size: 15px;
 }

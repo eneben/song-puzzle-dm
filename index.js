@@ -175,10 +175,11 @@ function removeCard() {
   }
 }
 
-// TO DO'S:
-// Bei richtiger Antwort: neues Rätsel oder Code oderwieoderwas?
-// sowohl neue karte nicht horizontal zentriert
-// als auch text-bild-button nicht richtig zentriert
+// TO DO'S u. PROBLEMS:
 
-// PROBLEMS:
-// hochscrollen funktioniert nicht, warum?!?
+// - media queries für code-emoticon-rätsel hinzufügen:
+// - warum ändert sich nicht die größe der emoticons? lässt sich mit font-size ändern,
+// das habe ich kontrolliert. aber media-queries funktionieren nicht. warum?
+// - weißer streifen beim hoch- und runterscrollen ganz oben bzw. ganz unten (so
+// wie wenn man mit der maus neu laden will, indem man ganz oben runterzieht)
+// - automatisches hochscrollen funktioniert nicht, warum?!?
